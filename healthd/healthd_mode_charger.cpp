@@ -424,7 +424,7 @@ static int64_t curr_time_ms(void)
 
 static void clear_screen(void)
 {
-    gr_color(0, 0, 0, 255);
+    gr_color(33, 33, 33, 255);
     gr_clear();
 }
 
