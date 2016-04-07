@@ -130,32 +130,188 @@ struct charger {
 
 static struct frame batt_anim_frames[] = {
     {
-        .disp_time = 750,
+        .disp_time = 1,
         .min_capacity = 0,
         .level_only = false,
         .surface = NULL,
     },
     {
-        .disp_time = 750,
-        .min_capacity = 20,
+        .disp_time = 1,
+        .min_capacity = 3,
         .level_only = false,
         .surface = NULL,
     },
     {
-        .disp_time = 750,
-        .min_capacity = 40,
+        .disp_time = 1,
+        .min_capacity = 6,
         .level_only = false,
         .surface = NULL,
     },
     {
-        .disp_time = 750,
+        .disp_time = 1,
+        .min_capacity = 9,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 12,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 15,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 18,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 21,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 24,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 27,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 30,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 33,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 36,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 39,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 42,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 45,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 48,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 51,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 54,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 57,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
         .min_capacity = 60,
         .level_only = false,
         .surface = NULL,
     },
     {
-        .disp_time = 750,
-        .min_capacity = 80,
+        .disp_time = 1,
+        .min_capacity = 63,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 66,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 69,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 72,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 75,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 79,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 82,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 85,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 88,
+        .level_only = false,
+        .surface = NULL,
+    },
+    {
+        .disp_time = 1,
+        .min_capacity = 91,
         .level_only = false,
         .surface = NULL,
     },
@@ -170,10 +326,10 @@ static struct frame batt_anim_frames[] = {
 static struct animation battery_animation = {
     .run = false,
     .frames = batt_anim_frames,
-    .cur_frame = 0,
+    .cur_frame = 1,
     .num_frames = ARRAY_SIZE(batt_anim_frames),
-    .cur_cycle = 0,
-    .num_cycles = 3,
+    .cur_cycle = 5,
+    .num_cycles = 15,
     .capacity = 0,
 };
 
@@ -370,6 +526,7 @@ static int draw_surface_centered(struct charger* /*charger*/, GRSurface* surface
     y = (gr_fb_height() - h) / 2 ;
 
     LOGV("drawing surface %dx%d+%d+%d\n", w, h, x, y);
+    gr_color(128,128,128,255);
     gr_blit(surface, 0, 0, w, h, x, y);
     return y + h;
 }
